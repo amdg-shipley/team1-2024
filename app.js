@@ -29,11 +29,11 @@ app.get('/Create', function(req, res){
 
 
 app.post('/apex', (req, res) => {
-    const { name, ammo, rarity} = req.body;
+    const { name, subject, rarity} = req.body;
 
     const apexList = db.get('apexList') || [];
 
-    apexList.push({name, ammo, rarity});
+    apexList.push({name, subject, rarity});
 
     db.set('apexList', apexList);
 
@@ -64,10 +64,10 @@ app.get('/view/:id', (req, res) => {
 
 app.post('/edit/:id', (req,res) => {
     const id = req.params.id;
-    const { name, ammo, rarity} = req.body;
+    const { name, subject, rarity} = req.body;
 
     const apexList = db.get('apexList') || [];
-    apexList[id] = { name, ammo, rarity};
+    apexList[id] = { name, subject, rarity};
     db.set('apexList', apexList);
 
     res.redirect('/view/'+id);
