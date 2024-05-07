@@ -29,11 +29,11 @@ app.get('/Create', function(req, res){
 
 
 app.post('/makeup', (req, res) => {
-    const { name, sub, sec, ass, qot, day, per} = req.body;
+    const { name, sub, sec, ass, qot, day, per,} = req.body;
 
     const makeupList = db.get('makeupList') || [];
 
-    makeupList.push({name, sub, sec, ass, qot, day, per});
+    makeupList.push({name, sub, sec, ass, qot, day, per,});
 
     db.set('makeupList', makeupList);
 
@@ -43,7 +43,7 @@ app.post('/makeup', (req, res) => {
 app.get('/delete/:id', (req,res, next) => {
     const id = req.params.id;
 
-    const makeupListList = db.get('makeupList') || [];
+    const makeupList = db.get('makeupList') || [];
     makeupList.splice(id, 1);
     db.set('makeupList', makeupList);
 
@@ -64,10 +64,10 @@ app.get('/view/:id', (req, res) => {
 
 app.post('/edit/:id', (req,res) => {
     const id = req.params.id;
-    const { name, sub, sec, ass, qot, day, per} = req.body;
+    const { name, sub, sec, ass, qot, day, per,} = req.body;
 
     const makeupList = db.get('makeupList') || [];
-    makeupList[id] = { name, sub, sec, ass, qot, day, per};
+    makeupList[id] = { name, sub, sec, ass, qot, day, per,};
     db.set('makeupList', makeupList);
 
     res.redirect('/view/'+id);
