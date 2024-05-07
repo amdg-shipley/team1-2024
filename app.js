@@ -16,10 +16,10 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    const apexList = db.get('apexList') || [];
+    const makeupList = db.get('makeupList') || [];
 
     res.render('Demo', {
-        data: apexList
+        data: makeupList
     })
 });
 
@@ -28,14 +28,14 @@ app.get('/Create', function(req, res){
 });
 
 
-app.post('/apex', (req, res) => {
+app.post('/makeup', (req, res) => {
     const { name, sub, sec, ass, qot, day, per} = req.body;
 
-    const apexList = db.get('apexList') || [];
+    const makeupList = db.get('makeupList') || [];
 
-    apexList.push({name, sub, sec, ass, qot, day, per});
+    makeupList.push({name, sub, sec, ass, qot, day, per});
 
-    db.set('apexList', apexList);
+    db.set('makeupList', makeupList);
 
     res.redirect('/Create');
 });
@@ -43,9 +43,9 @@ app.post('/apex', (req, res) => {
 app.get('/delete/:id', (req,res, next) => {
     const id = req.params.id;
 
-    const apexList = db.get('apexList') || [];
-    apexList.splice(id, 1);
-    db.set('apexList', apexList);
+    const makeupListList = db.get('makeupList') || [];
+    makeupList.splice(id, 1);
+    db.set('makeupList', makeupList);
 
     res.redirect('/');
 });
@@ -53,12 +53,12 @@ app.get('/delete/:id', (req,res, next) => {
 app.get('/view/:id', (req, res) => {
     const id = req.params.id;
 
-    const apexList = db.get('apexList') || [];
-    const apex = apexList[id];
+    const makeupList = db.get('makeupList') || [];
+    const makeup = makeupList[id];
 
     res.render('Edit', {
         id,
-        apex
+        makeup
     });
 });
 
@@ -66,9 +66,9 @@ app.post('/edit/:id', (req,res) => {
     const id = req.params.id;
     const { name, sub, sec, ass, qot, day, per} = req.body;
 
-    const apexList = db.get('apexList') || [];
-    apexList[id] = { name, sub, sec, ass, qot, day, per};
-    db.set('apexList', apexList);
+    const makeupList = db.get('makeupList') || [];
+    makeupList[id] = { name, sub, sec, ass, qot, day, per};
+    db.set('makeupList', makeupList);
 
     res.redirect('/view/'+id);
 });
