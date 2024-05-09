@@ -40,7 +40,7 @@
 
 
                   <select class="form-select" aria-label="Default select example">
-                    <option selected>What Period are you in?:</option>
+                    <option selected>What Section/Period are you in?:</option>
                     <option value="block1">Block 1</option>
                     <option value="block2">Block 2</option>
                     <option value="block3">Block 3</option>
@@ -51,13 +51,23 @@
                     <option value="block8">Block 8</option>
                   </select>
 
+                  <span class="input-group-text">Assessment name:</span>
+                  <input class="form-control" id="ass" name="ass" type="text" required/>
+
+                  <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Select Quiz or Test:</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="#">Quiz</a>
+                      <a href="#">Test</a>
+                    </div>
+                  </div>
+
 
                   <span class="input-group-text">Select the Date to makeup:</span>
                   <input class="form-control" id="day" name="day" type="date" required />
                   
                   
-                  <span class="input-group-text">Select the Period:</span>
-                  <input class="form-control" id="rarity" name="rarity" type="text-input" required />
+              
 
                 </div>
               </div>
