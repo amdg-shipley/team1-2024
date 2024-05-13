@@ -1,6 +1,13 @@
 {
-    "makeupList": [],
-    "blocks" : [
+    "makeupList": [
+        {
+            "name": "Ethan Brown",
+            "sub": "Math",
+            "ass": "Test 3",
+            "day": "2024-05-14"
+        }
+    ],
+    "blocks": [
         "Block 1",
         "Block 2",
         "Block 3",
