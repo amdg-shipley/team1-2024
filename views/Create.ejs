@@ -40,9 +40,9 @@
 
 
                   <select class="form-select" aria-label="Default select example">
-                    <% for ( var i = 0; i < per.length; i++ ) { %>
-                      <% var selected = ( per.blocks == makeupLists[i] ) ? "selected" : ""; %>
-                      <option value="<%=bikes[i] %>" <%=selected %>><%=bikes[i] %></option>
+                    <% for ( var i = 0; i < blocks.length; i++ ) { %>
+                      <% var selected = ( makeup.blocks == blocks[i] ) ? "selected" : ""; %>
+                      <option value="<%=blocks[i] %>" <%=selected %>><%=blocks[i] %></option>
                   <% } %>
 
                   <span class="input-group-text">Assessment name:</span>
