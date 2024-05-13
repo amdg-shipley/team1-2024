@@ -40,15 +40,10 @@
 
 
                   <select class="form-select" aria-label="Default select example">
-                    <option selected value="block1">Block 1</option>
-                    <option value="block2">Block 2</option>
-                    <option value="block3">Block 3</option>
-                    <option value="block4">Block 4</option>
-                    <option value="block5">Block 5</option>
-                    <option value="block6">Block 6</option>
-                    <option value="block7">Block 7</option>
-                    <option value="block8">Block 8</option>
-                  </select>
+                    <% for ( var i = 0; i < per.length; i++ ) { %>
+                      <% var selected = ( per.blocks == makeupLists[i] ) ? "selected" : ""; %>
+                      <option value="<%=bikes[i] %>" <%=selected %>><%=bikes[i] %></option>
+                  <% } %>
 
                   <span class="input-group-text">Assessment name:</span>
                   <input class="form-control" id="ass" name="ass" type="text" required/>
