@@ -58,7 +58,8 @@ app.get('/view/:id', (req, res) => {
 
     res.render('Edit', {
         id,
-        makeup
+        makeup,
+        blocks
     });
 });
 
