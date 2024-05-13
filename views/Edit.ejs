@@ -38,17 +38,11 @@
                   <span class="input-group-text">Subject:</span>
                   <input class="form-control" id="sub" name="sub" type="text" value="<%= makeup.sub%>" required />
 
-                  <span class="input-group-text">Section/Period:</span>
                   <select class="form-select" aria-label="Default select example">
-                    <option value="block1">Block 1</option>
-                    <option value="block2">Block 2</option>
-                    <option value="block3">Block 3</option>
-                    <option value="block4">Block 4</option>
-                    <option value="block5">Block 5</option>
-                    <option value="block6">Block 6</option>
-                    <option value="block7">Block 7</option>
-                    <option value="block8">Block 8</option>
-                  </select>
+                    <% for ( var i = 0; i < blocks.length; i++ ) { %>
+                      <% var selected = ( makeup.blocks == blocks[i] ) ? "selected" : ""; %>
+                      <option value="<%=blocks[i] %>" <%=selected %>><%=blocks[i] %></option>
+                  <% } %>
 
 
                 </div>
