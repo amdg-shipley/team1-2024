@@ -53,7 +53,7 @@ app.get('/delete/:id', (req,res, next) => {
 app.get('/view/:id', (req, res) => {
     const id = req.params.id;
     const blocks = db.get('blocks')
-    db.set('bikes',bikes);
+    db.set('blocks',blocks);
 
     const makeupList = db.get('makeupList') || [];
     const makeup = makeupList[id];
