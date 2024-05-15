@@ -1,5 +1,12 @@
 {
-    "makeupList": [],
+    "makeupList": [
+        {
+            "name": "Test",
+            "sub": "Test",
+            "ass": "Chapter 4 Quiz",
+            "day": "2024-05-16"
+        }
+    ],
     "blocks": [
         "Block 1",
         "Block 2",
